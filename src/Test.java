@@ -8,35 +8,37 @@ public class Test {
 
     public static void main(String[] args)  throws Exception{
 		
-		String msg = "haifa";
+		String msg = "Sabrine ben alaya";
 		int age =30;
 		
 		System.out.println("hello world");
 		
-		PrintMessage(msg);
+		PrintMessage(msg, age);
 		
-		System.out.println("dans 5 jour, je fais mes "+CalcAge(age)+" ans");
-		
-		System.out.println("==========la classe Test ==================");
+		System.out.println("==========la classe User ==================");
 			User user = new User();
-			user.main(msg);
-			System.out.println("Nom : "+ user.getName());
-			user.setName(msg);
-			System.out.println("Le nouveau nom : "+ user.getName());
+			
+			System.out.println("Nom : "+ user.getNom());
+			System.out.println("Age : "+ user.getAge());
+
+			user.setAge(age+1);	
+			System.out.println("Dans 7 mois, tu fête tes "+ user.getAge()+" ans");
+			
+			user.setNom(msg);
+			System.out.println("et ton nom sera "+ user.getNom());
 		
 		
 		String fileName = "fichierTest.txt";
 		File fichier = new File("C:/Users/USER/dev/java/Test/"+fileName);
 		
-		System.out.println("========== le contenu du fichier ==================");
+		System.out.println("==========  fichier : fichierTest.txt ==================");
 		System.out.println("Le contenu initial du fichier '"+fileName+"':");
 		readfile(fichier, fileName);
 		System.out.println("Le nouveau contenu du fichier "+fileName+ ":");
 		writefile(fichier,msg, fileName);
-		readfile(fichier,fileName);
-		
+		readfile(fichier,fileName);				
 	}
-	
+
 	private static void writefile(File fichier, String msg, String fileName) {
 		
 		try{
@@ -61,12 +63,9 @@ public class Test {
 		}
 		
 	}
-	private static int CalcAge(int age) {
-		return age+1;
-	}
-	
-	private static void PrintMessage(String msg){
-		System.out.println("Bonjour "+ msg);
+		
+	private static void PrintMessage(String msg, int age){
+		System.out.println("Bonjour, je m'appelle "+ msg+" et j'ai "+age+" ans.");
 	}
 
 }

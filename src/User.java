@@ -1,18 +1,27 @@
 public class User {
-    public String  name;
+    public String  nom;
+	public int  age;
 	
-	public  void main(String args) {
-		System.out.println("bonjour "+args+", ici c'est la class test");
+	public  void main() {
+		System.out.println("bonjour , bienvenue dans la class User");
 	}
 	
     public User(){
-        this.name="sabrine";
+        this.nom = "samar ben alaya";
+		this.age = 31;
     }
 
-	public String getName(){
-		return name;
+	public String getNom(){
+		return nom;
 	}
-	public void setName(String name){
-		this.name=name;
+	public void setNom(String name){
+		this.nom = name;
+	}
+	
+	public int getAge(){
+		return age;
+	}
+	public void setAge(int age){
+		this.age = age;
 	}
 }
